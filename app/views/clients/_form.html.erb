@@ -12,38 +12,52 @@
 <% end %>
 
 <div class="field">
-  <%= f.label :name %><br>
+  <%= f.label :Nombre %><br>
   <%= f.text_field :name %>
 </div>
 <div class="field">
-  <%= f.label :surname %><br>
+  <%= f.label :Apellido %><br>
   <%= f.text_field :surname %>
 </div>
 <div class="field">
-  <%= f.label :birthdate %><br>
+  <%= f.label :"Fecha de nacimiento" %><br>
   <%= f.date_select :birthdate %>
 </div>
 <div class="field">
-  <%= f.label :gender %><br>
+  <%= f.label :Género %><br>
 
   <%= f.radio_button(:gender, "Femenino") %>
   <%= label :gender_f, 'Femenino' %>
 
   <%= f.radio_button(:gender, "Masculino") %>
   <%= label :gender_m, 'Masculino' %>
-
-  <%= f.radio_button(:gender, "Otro") %>
-  <%= label :gender_o, 'Otro' %>
 </div>
 <div class="field">
-  <%= f.label :du %><br>
+  <%= f.label :Documento %><br>
   <%= f.number_field :du %>
 </div>
 <div class="field">
-  <%= f.label :cui %><br>
+  <%= f.label :"cuit/cuil" %><br>
   <%= f.text_field :cui %>
 </div>
+
 <div class="actions">
-  <%= f.submit %>
+  <h1>Contacto</h1>
+  <%= f.fields_for :contacts, include_id: false do |contacts_form| %>
+
+  <div class="field">
+    <%= contacts_form.label :Tipo %><br>
+    <%= contacts_form.text_field :kind %>
+  </div>
+  <div class="field">
+    <%= contacts_form.label :Informacion %><br>
+    <%= contacts_form.text_field :info %>
+  </div>
+  <% end %>
 </div>
+
+<div class="actions">
+  <%= f.submit "Guardar", class: "btn btn-primary" %>
+</div>
+
 <% end %>
