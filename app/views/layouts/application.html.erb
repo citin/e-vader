@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EVader</title>
+  <title>e-vader</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="skin-purple sidebar-mini fixed">
 
-<%= yield %>
+  <!-- Site wrapper -->
+  <div class="wrapper">
 
+    <%= render partial: 'shared/main_header' %>
+
+    <%= render partial: 'shared/lateral_menu' %>
+
+    <!-- =============================================== -->
+
+    <!-- Right side column. Contains the navbar and content of the page -->
+    <div class="content-wrapper">
+
+      <!-- Main content -->
+      <section class="content">
+
+        <div id="modal-holder"></div>
+        <%= yield %>
+
+      </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>e-vader</b>
+      </div>
+    </footer>
+
+  </div><!-- ./wrapper -->
 </body>
 </html>

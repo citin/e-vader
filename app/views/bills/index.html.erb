@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Facturas</h1>
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Descripcion</th>
+      <th>Monto Total</th>
+      <th>Fecha de emisión</th>
+      <th>Opciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bills.each do |bill| %>
+      <tr>
+        <td><%= bill.description %></td>
+        <td><%= bill.total %></td>
+        <td><%= bill.issue_date %></td>
+        <td>
+          <%= link_to 'Ver', bill, :class=>"btn btn-primary" %>
+          <%= link_to 'Editar', edit_bill_path(bill), :class=>"btn btn-primary" %>
+          <%= link_to 'Borrar', bill, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Factura', new_bill_path, :class=>"btn btn-primary" %>
