@@ -11,6 +11,14 @@
       <!-- Optionally, you can add icons to the links -->
       <li> <%= link_to 'Facturas', bills_path, class: "fa fa-link" %> </li>
       <li> <%= link_to 'Clientes', clients_path, class: "fa fa-link" %> </li>
+      <li class="treeview">
+        <a href="#"><i class="fa fa-link"></i> <span>Consultas</span> <i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a href="#">Monto Total</a></li>
+          <li><a href="#">Cantidad de Facturas</a></li>
+          <li><a href="#">Top 5</a></li>
+        </ul>
+      </li>
 
     </ul><!-- /.sidebar-menu -->
   </section>
