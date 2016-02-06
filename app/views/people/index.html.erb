@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing People</h1>
+<h1>Listado de Personas</h1>
 
 <table class="table table-hover table-bordered">
   <thead>
@@ -17,9 +17,9 @@
         <td><%= person.name %></td>
         <td><%= person.cui %></td>
         <td>
-          <%= link_to 'Show', person, :class=>"btn btn-primary" %>
-          <%= link_to 'Edit', edit_person_path(person), :class=>"btn btn-primary"%>
-          <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-primary" %>
+          <%= link_to 'Ver', person, :class=>"btn btn-primary" %>
+          <%= link_to 'Editar', edit_person_path(person), :class=>"btn btn-primary"%>
+          <%= link_to 'Eliminar', person, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-primary" %>
         </td>
       </tr>
     <% end %>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Person', new_person_path , :class=>"btn btn-primary"  %>
+<%= link_to 'Nueva Persona', new_person_path , :class=>"btn btn-primary"  %>
