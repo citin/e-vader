@@ -4,6 +4,9 @@ class Bill < ActiveRecord::Base
 
   accepts_nested_attributes_for :person
 
+  validates :total, numericality: true
+  validates :description, :total, :issue_date, presence: true
+
   def self.total_by_year
     group("strftime('%Y', issue_date)").sum('total')
   end
