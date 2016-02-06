@@ -2,7 +2,12 @@ class Client < ActiveRecord::Base
   has_many :bills
   has_many :contacts
 
-  accepts_nested_attributes_for :contacts
+  accepts_nested_attributes_for :contacts, , allow_destroy: true, reject_if: :new_record?
+  validates_associated :contacts
+
+  validates :name, :surname, :birthdate, :gender, :du,  :cui, presence: true
+  validates :du, numericality: true
+  validates :du, :cui, uniqueness: true
 
   def full_name
     "#{name} #{surname}"
