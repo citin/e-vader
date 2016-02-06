@@ -2,7 +2,7 @@ class Client < ActiveRecord::Base
   has_many :bills, dependent: :destroy
   has_many :contacts, dependent: :destroy
 
-  accepts_nested_attributes_for :contacts, allow_destroy: true, reject_if: :new_record?
+  accepts_nested_attributes_for :contacts, allow_destroy: true
   validates_associated :contacts
 
   validates :name, :surname, :birthdate, :gender, :du,  :cui, :contacts, presence: true

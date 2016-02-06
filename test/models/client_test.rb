@@ -9,17 +9,15 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   test "Creacion de cliente CON datos de contacto" do
-    params = { client: { surname: 'Sampayo', name: 'Ricardo', birthdate: Time.zone.parse("1988-05-09"), gender: 'masculino', du: '35221199',cui:'3-3445-2', contacts_attributes: [{kind: 'whasap', info: '54221876492'}] } }
 
-    cli2 = Client.create(params[:client])
+    cli2 = Client.create( { surname: 'Yalin', name: 'Mariano', birthdate: Time.zone.parse("1989-05-09"), gender: 'masculino', du: '35221199',cui:'3-344-2', contacts_attributes: [{kind: 'whasap', info: '54221276492'}] })
     assert cli2.valid?
   end
 
   test "Creacion de cliente CON dato invalido" do
     params = { client: { surname: 'Sampayo', name: 'Ricardo', birthdate: Time.zone.parse("1988-05-09"), gender: 'masculino', du: 'dni_invalido',cui:'3-3445-2', contacts_attributes: [{kind: 'whasap', info: '54221876492'}] } }
-
-    cli2 = Client.create(params[:client])
-    assert_not cli2.valid?
+    cli3 = Client.create(params[:client])
+    assert_not cli3.valid?
   end
 
 
