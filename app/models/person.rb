@@ -1,3 +1,6 @@
 class Person < ActiveRecord::Base
-  belongs_to :bill
+  has_many :bills
+
+  validates :cui, uniqueness: true
+
 end

@@ -51,3 +51,7 @@ gem 'pry-rails', :group => :development
 gem 'seed_dump'
 # Better errors
 gem 'better_errors'
+# This gem packages the jQuery UI assets (JavaScripts, stylesheets, and images) 
+gem 'jquery-ui-rails'
+# Gem for conveniently manage multiple nested models in a single form
+gem "nested_form"

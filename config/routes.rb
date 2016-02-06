@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :bills
   resources :clients
+  resources :people
 
   get '/', to: 'clients#index'
 

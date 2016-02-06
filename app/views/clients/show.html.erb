@@ -16,7 +16,7 @@
 </p>
 <p>
   <strong>Edad:</strong>
-  <%= @client.birthdate %>
+  <%= @client.age %>
 </p>
 
 <p>
@@ -34,5 +34,41 @@
   <%= @client.cui %>
 </p>
 
+<p>
+  <strong>Total facturado por año</strong>
+  <% @bills_total_by_year.each do |year, total| %>
+  <li>Año <%= year %>: <b><%= total %>$</b></li>
+  <% end %>
+</p>
+<p>
+  <strong>Total de facturas por mes</strong>
+  <% @bills_quantity_by_month.each do |month, total| %>
+  <li><%= month_to_s(month) %>: <b><%= total %></b></li>
+  <% end %>
+</p>
+<p>
+  <strong>5 personas mas factudas</strong>
+  <% @five_people.each do |person, total| %>
+  <ul>
+    <li>
+      <strong>
+        <%= person.name %>
+      </strong>
+      <ul>
+        <li>Cuit/l: <%= person.cui %></li>
+        <li>Total: <%= total %></li>
+      </ul>
+    </li>
+  </ul>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
+
+<!--
+x La edad del cliente.
+- El monto total facturado por año para el cliente (al estilo "En 2015 facturó $ 999.999,00").
+- La cantidad de facturas que el cliente ha emitido por mes desde Enero del corriente año.
+- Las 5 personas a las que más les ha facturado ese cliente. -->

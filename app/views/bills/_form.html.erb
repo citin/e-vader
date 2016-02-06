@@ -27,7 +27,14 @@
     <%= f.label :cliente %><br>
     <%= f.collection_select(:client_id, Client.all, :id, :full_name) %>
   </div>
+  <div class="field">
+    <%= f.label :persona %><br>
+    <%= f.collection_select(:person_id, Person.all, :id, :name) %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Guardar" %>
   </div>
+
 <% end %>

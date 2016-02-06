@@ -10,6 +10,9 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @bills_total_by_year = @client.bills.total_by_year
+    @bills_quantity_by_month = @client.bills.quantity_by_month
+    @five_people = @client.bills.top_5.map {|person_id, sum| [Person.find_by_id(person_id), sum] }
   end
 
   # GET /clients/new
