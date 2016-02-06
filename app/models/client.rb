@@ -5,7 +5,7 @@ class Client < ActiveRecord::Base
   accepts_nested_attributes_for :contacts, allow_destroy: true, reject_if: :new_record?
   validates_associated :contacts
 
-  validates :name, :surname, :birthdate, :gender, :du,  :cui, presence: true
+  validates :name, :surname, :birthdate, :gender, :du,  :cui, :contacts, presence: true
   validates :du, numericality: true
   validates :du, :cui, uniqueness: true
 
