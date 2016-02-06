@@ -14,28 +14,28 @@
 <% end %>
 
 <div class="field">
-  <%= f.label :Nombre %><br>
+  <%= f.label :nombre %><br>
   <%= f.text_field :name %>
 </div>
 <div class="field">
-  <%= f.label :Apellido %><br>
+  <%= f.label :apellido %><br>
   <%= f.text_field :surname %>
 </div>
 <div class="field">
-  <%= f.label :"Fecha de nacimiento" %><br>
+  <%= f.label :"fecha de nacimiento" %><br>
   <%= f.date_select :birthdate, :start_year => Time.now.year,:end_year => 1910 %>
 </div>
 <div class="field">
-  <%= f.label :Género %><br>
+  <%= f.label :fénero %><br>
 
   <%= f.radio_button(:gender, "Femenino") %>
-  <%= label :gender_f, 'Femenino' %>
+  <%= label :gender_f, 'femenino' %>
 
   <%= f.radio_button(:gender, "Masculino") %>
-  <%= label :gender_m, 'Masculino' %>
+  <%= label :gender_m, 'fasculino' %>
 </div>
 <div class="field">
-  <%= f.label :Documento %><br>
+  <%= f.label :focumento %><br>
   <%= f.number_field :du %>
 </div>
 <div class="field">
@@ -49,16 +49,16 @@
   <!-- contacts_form ... link to add, to remove. -->
   <%= f.fields_for :contacts do |contacts_form| %>
     <div class="field">
-      <%= contacts_form.label :Tipo %><br>
+      <%= contacts_form.label :tipo %><br>
       <%= contacts_form.text_field :kind %>
     </div>
     <div class="field">
-      <%= contacts_form.label :Informacion %><br>
+      <%= contacts_form.label :informacion %><br>
       <%= contacts_form.text_field :info %>
     </div>
-    <p><%= contacts_form.link_to_remove "Eliminar contacto" %></p>
+    <p><%= contacts_form.link_to_remove "eliminar contacto" %></p>
   <% end %>
-  <p><%= f.link_to_add "Agregar nuevo contacto", :contacts %></p>
+  <p><%= f.link_to_add "agregar nuevo contacto", :contacts %></p>
 </div>
 
 <div class="actions">
